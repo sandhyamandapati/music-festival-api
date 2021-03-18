@@ -1,7 +1,10 @@
 package com.le.festivaldata.helper;
+import java.io.IOException;
+import java.util.Comparator;
 import java.util.List;
 import java.util.TreeMap;
 import java.util.TreeSet;
+import java.util.stream.Collectors;
 
 import com.le.festivaldata.entity.Band;
 import com.le.festivaldata.entity.Festival;
@@ -57,7 +60,38 @@ public class MusicalFesitivalHelper {
 		return result;
 	}
 	
+	
+	public static String getSortedMusicFestivalList(List<Festival> festivals) throws IOException {
 
+		// getting bands from festival show list in sorted order
+	    List<Band> bands = festivals
+	        .stream()
+	        .flatMap(carShow->carShow.getBands().stream())
+	        .sorted(Comparator.comparing(Band::getRecordLabel))
+	        .collect(Collectors.toList());
+	    
+
+	    StringBuilder builder =  new StringBuilder();
+	   
+	    for(Band band:bands) {
+	    	if(!builder.toString().contains(band.getRecordLabel()))
+		    builder.append(band.getRecordLabel());
+		    builder.append("\n\t");
+		    builder.append(band.getName());
+		    builder.append("\n\t\t");
+		    List<String> shows = festivals
+			          .stream()
+			          .filter(festival -> festival.getBands().contains(band))
+			          .map(Festival::getName)
+			          .collect(Collectors.toList());
+		    shows.forEach(builder::append);
+		    builder.append("\n");
+		     
+	    }
+	    
+	    return builder.toString();
+	  }
+	  
 }
 
 

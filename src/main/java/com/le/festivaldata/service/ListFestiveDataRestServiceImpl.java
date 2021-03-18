@@ -1,5 +1,6 @@
 package com.le.festivaldata.service;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.SortedMap;
 import java.util.TreeMap;
@@ -9,6 +10,7 @@ import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.web.client.RestTemplate;
 
 import com.le.festivaldata.entity.Festival;
@@ -29,5 +31,23 @@ public class ListFestiveDataRestServiceImpl implements ListFestiveDataRestServic
 		return MusicalFesitivalHelper.getSortedList(festivalList);
 		
 	}
+	
+	 public String getFormattedFestivalShowsList() throws IOException{
+		 
+		 ResponseEntity<List<Festival>> festivalResponse;
+		 RestTemplate restTemplate = new RestTemplate();
+		    try {
+			 festivalResponse =
+			        restTemplate.exchange("http://localhost:8080/festivals",
+			                    HttpMethod.GET, null, new ParameterizedTypeReference<List<Festival>>() {
+			            });
+		    }
+		    catch(HttpStatusCodeException ex) {
+		        return ex.getResponseBodyAsString();
+		    }
+			List<Festival> festivalList = festivalResponse.getBody();
+		    String result = MusicalFesitivalHelper.getSortedMusicFestivalList(festivalList);
+		    return result;
+		  }
 	
 }

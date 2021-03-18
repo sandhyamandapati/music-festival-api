@@ -1,24 +1,80 @@
-[
-  {
-    "name": "Small Night In",
-    "bands": [
-      {
-        "name": "Squint-281",
-        "recordLabel": "Outerscope"
-      },
-      {
-        "name": "The Black Dashes",
-        "recordLabel": "Fourth Woman Records"
-      }
+{
+  "": {
+    "Winter Primates": [
+      "LOL-palooza"
     ]
   },
-  {
-    "name": "Trainerella",
-    "bands": [
-      {
-        "name": "Adrian Venti",
-        "recordLabel": "Monocracy Records"
-      }
+  "ACR": {
+    "Critter Girls": [
+      "Unknown Festival"
+    ],
+    "Manish Ditch": [
+      "Trainerella"
+    ]
+  },
+  "Anti Records": {
+    "YOUKRANE": [
+      "Trainerella"
+    ]
+  },
+  "Fourth Woman Records": {
+    "Jill Black": [
+      "LOL-palooza"
+    ],
+    "The Black Dashes": [
+      "Small Night In"
+    ]
+  },
+  "MEDIOCRE Music": {
+    "Yanke East": [
+      "Small Night In"
+    ]
+  },
+  "Marner Sis. Recording": {
+    "Auditones": [
+      "Twisted Tour"
+    ],
+    "Green Mild Cold Capsicum": [
+      "Small Night In"
+    ],
+    "Wild Antelope": [
+      "Small Night In"
+    ]
+  },
+  "Monocracy Records": {
+    "Adrian Venti": [
+      "Trainerella"
+    ]
+  },
+  "Outerscope": {
+    "Squint-281": [
+      "Small Night In"
+    ],
+    "Summon": [
+      "Twisted Tour"
+    ]
+  },
+  "Pacific Records": {
+    "Frank Jupiter": [
+      "LOL-palooza"
+    ],
+    "Propeller": [
+      "Unknown Festival"
+    ]
+  },
+  "Still Bottom Records": {
+    "Wild Antelope": [
+      "Trainerella"
+    ]
+  },
+  "Unkown RecordLabel": {
+    "Squint-281": [
+      "Twisted Tour"
+    ]
+  },
+  "XS Recordings": {
+    "Werewolf Weekday": [
+      "LOL-palooza"
     ]
   }
-]
+}
