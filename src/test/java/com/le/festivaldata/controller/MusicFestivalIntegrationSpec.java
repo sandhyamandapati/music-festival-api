@@ -33,7 +33,7 @@ public class MusicFestivalIntegrationSpec {
 	HttpHeaders headers = new HttpHeaders();
 
 	@Test
-	public void testRetrieveStudent() throws Exception {
+	public void testgetsortedFestivalList() throws Exception {
 		HttpEntity<String> entity = new HttpEntity<String>(null, headers);
 		String expectedJson = getResourceContent("Festival_Test.json");
 
